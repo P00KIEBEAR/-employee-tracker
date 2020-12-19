@@ -5,7 +5,7 @@ const Employee = require('../lib/Employee');
 describe('Person', () => {
   it('should be a name', () => {
     const employee = new Employee('Pat', 13, "patpaggi@gmail.com");
-    //should be seperate tests
+
     expect(employee.name).toBe('Pat');
   }),
     it('should be id', () => {
