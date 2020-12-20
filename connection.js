@@ -1,20 +1,24 @@
-const mysql = require("mysql2/promises");
+const fs = require('fs');
+const mysql = require("mysql2/promise");
 
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "password",
-  database: "company_db"
-});
+const connect = async () => {
+  const connection = await mysql.createConnection({
+    host: "localhost",
+    port: "3306",
+    user: "root",
+    password: "password",
+    database: "company_db",
 
-connection.connect((err) => {
-  if (err) throw err;
-  afterConnection();
-});
+  });
+  console.log("connected as id" + ' ' + connection.threadId);
+  return connection;
 
-afterConnection = () => {
-
-
-  connection.end();
 };
-module.exports = connection;
+/*const showEmployees = () => {
+  connect.query('SELECT * FROM employee', function (error, results) {
+    if (error) throw error;
+    console.table(results);
+  })
+}*/
+module.exports = connect;
+//module.exports = showEmployees;
