@@ -2,7 +2,7 @@
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES
- ('Pat', 'Paggi', 1 , 1),
+ ('Pat', 'Paggi',3 , 1),
 ('Tylor', 'Paggi', 1,2),
   ('John', 'Doe', 2, 1),
   ('Charles', 'Dickson', 1,2),
